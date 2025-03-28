@@ -52,12 +52,12 @@ include("partials/header.php")
         <p>&nbsp;</p>
   		<h1>Send us a message</h1>
          <div id="contact_form">
-            <form method="post" name="contact" action="contact_formular.php">
+            <form method="post" name="contact" action="thankyou.php">
             	<div class="float_l">
-                 	<label for="author">Name:</label> <input type="text" id="author" name="author" class="required input_field" />
+                 	<label for="author">Name:</label> <input required type="text" id="author" name="author"  class="required input_field" />
 				</div>
                 <div class="float_r">
-                    <label for="email">Email:</label> <input type="text" id="email" name="email" class="validate-email required input_field" />
+                    <label for="email">Email:</label> <input required type="text" id="email" name="email" class="validate-email required input_field" />
 				</div>
                 <div class="cleaner h20"></div>
                     <label for="text">Message:</label> <textarea id="text" name="text" rows="0" cols="0" class="required"></textarea>
@@ -67,7 +67,7 @@ include("partials/header.php")
             </form>
         </div> 
         
-    </div> <!-- end of content -->
+    </div> 
     <?php
     include("partials/footer.php")
 
