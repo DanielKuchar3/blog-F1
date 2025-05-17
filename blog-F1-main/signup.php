@@ -1,5 +1,7 @@
 <?php
-include("partials/header.php")
+include("partials/header.php");
+require_once '../includes/config_session.inc.php';
+require_once '../includes/signup_view.inc.php';
 
 ?>
 
@@ -24,7 +26,7 @@ include("partials/header.php")
                   	</ul>
               	</li>
               	<li><a href="blog.php">Blog</a></li>
-              	<li><a href="contact.php" class="selected">Contact</a></li>
+              	<li><a href="contact.php" >Contact</a></li>
                 <li><a href="profile.php">Sign up/Log in</a>
                     <ul>
                         <li><a href="profile.php">Log in</a></li>
@@ -37,7 +39,7 @@ include("partials/header.php")
     </div> <!-- end of header -->
     
     <div id="content_top">
-        <div id="page_title">Contact Us</div>
+        <div id="page_title">Sign up</div>
         <div id="search_box">
             <form action="#" method="get">
                 <input type="text" value="Search" name="q" size="10" id="searchfield" title="searchfield" onfocus="clearText(this)" onblur="clearText(this)" />
@@ -48,25 +50,31 @@ include("partials/header.php")
     </div>  
     
     <div id="templatemo_content">
-        
-  		<h1>Send us a message</h1>
+       
+  		
          <div id="contact_form">
-            <form method="post" name="contact" action="../includes/formhandler.inc.php">
+            <form method="post"  action="../includes/signup.inc.php">
             	<div class="float_l">
-                 	<label for="author">Name:</label> 
-                    <input required type="text"  name="username"  class="required input_field" />
+                 	<label for="author">Username:</label> 
+                    <input  type="text" id="author" name="username"  class="required input_field" />
 				</div>
                 <div class="float_r">
                     <label for="email">Email:</label> 
-                    <input required type="text"  name="email" class="validate-email required input_field" />
-				</div>
+                    <input type="text"  name="email" class="validate-email required input_field" />
+                </div>
                 <div class="cleaner h20"></div>
-                    <label for="text">Message:</label> 
-                    <textarea id="text" name="message" rows="0" cols="0" class="required"></textarea>
+                    <label for="password">Password:</label> 
+                    <input  type="password"  name="pwd"  class="required input_field" />    
+                   
                 <div class="cleaner h20"></div>
-                    <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Send" /> 
+                    <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Create a profile" /> 
                     <input type="reset" class="submit_btn float_r" name="reset" id="reset" value="Reset" />
+                    <a class="acc" href="profile.php">Have an account?</a>
             </form>
+
+            <?php
+            check_signup_errors();
+            ?>
         </div> 
         
     </div> 

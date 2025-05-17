@@ -82,13 +82,7 @@ $(document).ready(function() {
         <div id="templatemo_menu" class="ddsmoothmenu">
             <ul>
               	<li><a href="index.php">Home</a></li>
-          		<li><a href="about.php">About</a>
-                    <ul>
-                        <li><a href="#submenu1">Sub menu 1</a></li>
-                        <li><a href="#submenu2">Sub menu 2</a></li>
-                        <li><a href="#submenu3">Sub menu 3</a></li>
-                  	</ul>
-             	</li>
+          		
           		<li><a href="portfolio.php" class="selected">Portfolio</a>
                     <ul>
                         <li><a href="#submenu1">Sub menu 1</a></li>
@@ -100,7 +94,12 @@ $(document).ready(function() {
               	</li>
               	<li><a href="blog.php">Blog</a></li>
               	<li><a href="contact.php">Contact</a></li>
-                <li><a href="profile.php">Sign up/Log in</a></li>
+                <li><a href="profile.php">Sign up/Log in</a>
+                    <ul>
+                        <li><a href="profile.php">Log in</a></li>
+                        <li><a href="signup.php">Sign up</a></li>
+                  </ul>
+                </li>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of templatemo_menu -->

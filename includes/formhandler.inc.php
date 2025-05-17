@@ -8,17 +8,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         require_once "../includes/dbh.inc.php";
 
-        $query = "INSERT INTO messages (name,email,message) VALUES
-        (?,?, ?);";
+        $query = "INSERT INTO messages (username,email,message) VALUES
+        (:username, :email, :message);";
         
-        $stnt = $pdo->prepare($query);
+        $stmt = $pdo->prepare($query);
+
+        $stmt->bindParam(":username",$username);
+        $stmt->bindParam(":email",$email);
+        $stmt->bindParam(":message",$message);
         
-        $stnt->execute([$username, $email, $message]);
+        $stmt->execute();
 
         $pdo = null;
-        $stnt = null;
+        $stmt = null;
 
-        header("Location: ../blog-F1-main/index.php");
+        header("Location: ../blog-F1-main/thankyou.php");
         die();
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());

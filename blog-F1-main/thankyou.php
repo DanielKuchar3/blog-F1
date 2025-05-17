@@ -25,12 +25,7 @@ include("partials/header.php")
               	</li>
               	<li><a href="blog.php">Blog</a></li>
               	<li><a href="contact.php" class="selected">Contact</a></li>
-                <li><a href="profile.php">Sign up/Log in</a>
-                    <ul>
-                        <li><a href="profile.php">Log in</a></li>
-                        <li><a href="signup.php">Sign up</a></li>
-                  </ul>
-                </li>
+                <li><a href="profile.php">Sign up/Log in</a></li>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of templatemo_menu -->
@@ -49,25 +44,8 @@ include("partials/header.php")
     
     <div id="templatemo_content">
         
-  		<h1>Send us a message</h1>
-         <div id="contact_form">
-            <form method="post" name="contact" action="../includes/formhandler.inc.php">
-            	<div class="float_l">
-                 	<label for="author">Name:</label> 
-                    <input required type="text"  name="username"  class="required input_field" />
-				</div>
-                <div class="float_r">
-                    <label for="email">Email:</label> 
-                    <input required type="text"  name="email" class="validate-email required input_field" />
-				</div>
-                <div class="cleaner h20"></div>
-                    <label for="text">Message:</label> 
-                    <textarea id="text" name="message" rows="0" cols="0" class="required"></textarea>
-                <div class="cleaner h20"></div>
-                    <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Send" /> 
-                    <input type="reset" class="submit_btn float_r" name="reset" id="reset" value="Reset" />
-            </form>
-        </div> 
+  		<h1>Contact form has been sent successfully !</h1>
+         
         
     </div> 
     <?php
