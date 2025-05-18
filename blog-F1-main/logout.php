@@ -3,7 +3,6 @@ include("partials/header.php");
 require_once '../includes/config_session.inc.php';
 require_once '../includes/login_view.inc.php';
 
-
 ?>
 
 <body>
@@ -40,13 +39,13 @@ require_once '../includes/login_view.inc.php';
     </div> <!-- end of header -->
     
     <div id="content_top">
-        <div id="page_title">Log in</div>
-        <div id="search_box">
-            <form action="#" method="get">
-                <input type="text" value="Search" name="q" size="10" id="searchfield" title="searchfield" onfocus="clearText(this)" onblur="clearText(this)" />
-                <input type="submit" name="Search" value="" id="searchbutton" title="Search" />
-            </form>
-        </div>
+        <div id="page_title">
+            <?php
+            output_username();
+            ?></div>
+      
+            
+        
         <div class="cleaner"></div>
     </div>  
     
@@ -54,24 +53,14 @@ require_once '../includes/login_view.inc.php';
        
   		
          <div id="contact_form">
-            <form method="post" name="contact" action="../includes/login.inc.php">
-            	<div class="float_l">
-                 	<label for="author">Username:</label> 
-                    <input required type="text" id="author" name="username"  class="required input_field" />
-				</div>
+            <form method="post"  action="../includes/logout.inc.php">     
                 <div class="cleaner h20"></div>
-                    <label for="password">Password:</label> 
-                    <input required type="password"  name="pwd"  class="required input_field" />    
-                   
-                <div class="cleaner h20"></div>
-                    <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Create a profile" /> 
-                    <input type="reset" class="submit_btn float_r" name="reset" id="reset" value="Reset" />
-                    <a class="acc" href="signup.php">Didn't have an account</a>
+                    <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Logout" /> 
+                    
+                    
             </form>
 
-            <?php
-            check_login_errors();
-            ?>
+        
         </div> 
         
     </div> 
