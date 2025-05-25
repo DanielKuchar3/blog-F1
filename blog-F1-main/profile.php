@@ -1,7 +1,6 @@
 <?php
 include("partials/header.php");
-require_once '../includes/config_session.inc.php';
-require_once '../includes/login_view.inc.php';
+session_start();
 
 
 ?>
@@ -16,24 +15,32 @@ require_once '../includes/login_view.inc.php';
         <div id="templatemo_menu" class="ddsmoothmenu">
             <ul>
               	<li><a href="index.php">Home</a></li>
-          		
-          		<li><a href="portfolio.php">Portfolio</a>
-                    <ul>
-                        <li><a href="#submenu1">Sub menu 1</a></li>
-                        <li><a href="#submenu2">Sub menu 2</a></li>
-                        <li><a href="#submenu3">Sub menu 3</a></li>
-                        <li><a href="#submenu4">Sub menu 4</a></li>
-                        <li><a href="#submenu5">Sub menu 5</a></li>
-                  	</ul>
-              	</li>
               	<li><a href="blog.php">Blog</a></li>
               	<li><a href="contact.php" >Contact</a></li>
-                <li><a href="profile.php">Sign up/Log in</a>
+                <?php
+                if (isset($_SESSION["id"]))
+                    {
+                ?>
+                <li><a href="account.php"><?php echo $_SESSION["username"]; ?></a>
+                    <ul>
+                        <li><a href="../includes/logout.inc.php">Log out</a></li>
+                        
+                  </ul>
+                </li>  
+                <?php      
+                    }
+                    else
+                    {
+                ?>
+                <li><a href="profile.php" class="selected">Sign up/Log in</a>
                     <ul>
                         <li><a href="profile.php">Log in</a></li>
                         <li><a href="signup.php">Sign up</a></li>
                   </ul>
                 </li>
+                <?php
+                    }
+                ?>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of templatemo_menu -->
@@ -64,14 +71,12 @@ require_once '../includes/login_view.inc.php';
                     <input required type="password"  name="pwd"  class="required input_field" />    
                    
                 <div class="cleaner h20"></div>
-                    <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Create a profile" /> 
+                    <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Log in" /> 
                     <input type="reset" class="submit_btn float_r" name="reset" id="reset" value="Reset" />
                     <a class="acc" href="signup.php">Didn't have an account</a>
             </form>
 
-            <?php
-            check_login_errors();
-            ?>
+            
         </div> 
         
     </div> 

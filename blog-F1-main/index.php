@@ -1,40 +1,52 @@
 <?php
-include("partials/header.php")
-
+include("partials/header.php");
+session_start();
 ?>
-
 <body>
 
 <div id="templatemo_wrapper">
 	<div id="templatemo_header">
     	<div id="site_title">
-        	<h1><a href="#">F1 NEWS</a></h1>
+        	<h1><a href="#">Newspaper Template</a></h1>
         </div>
         <div id="templatemo_menu" class="ddsmoothmenu">
             <ul>
               	<li><a href="index.php" class="selected">Home</a></li>
-              	</li>
-          		<li><a href="portfolio.php">Portfolio</a>
-                    <ul>
-                        <li><a href="#submenu1">Sub menu 1</a></li>
-                        <li><a href="#submenu2">Sub menu 2</a></li>
-                        <li><a href="#submenu3">Sub menu 3</a></li>
-                        <li><a href="#submenu4">Sub menu 4</a></li>
-                        <li><a href="#submenu5">Sub menu 5</a></li>
-                  </ul>
-              	</li>
+          		
+          		
               	<li><a href="blog.php">Blog</a></li>
-              	<li><a href="contact.php">Contact</a></li>
+              	<li><a href="contact.php" >Contact</a></li>
+
+                <?php
+                if (isset($_SESSION["id"]))
+                    {
+                ?>
+                <li><a href="account.php"><?php echo $_SESSION["username"]; ?></a>
+                    <ul>
+                        <li><a href="../includes/logout.inc.php">Log out</a></li>
+                        
+                  </ul>
+                </li>  
+                <?php      
+                    }
+                    else
+                    {
+                ?>
                 <li><a href="profile.php">Sign up/Log in</a>
                     <ul>
                         <li><a href="profile.php">Log in</a></li>
                         <li><a href="signup.php">Sign up</a></li>
                   </ul>
                 </li>
+                <?php
+                    }
+                ?>
+               
             </ul>
             <br style="clear: left" />
         </div> <!-- end of templatemo_menu -->
     </div> <!-- end of header -->
+
     
     <div id="templatemo_slider">
         <div id="flash_grid_slider">

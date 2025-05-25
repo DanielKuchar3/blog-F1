@@ -1,6 +1,6 @@
 <?php
-include("partials/header.php")
-
+include("partials/header.php");
+session_start();
 ?>
 
 <body>
@@ -14,23 +14,33 @@ include("partials/header.php")
             <ul>
               	<li><a href="index.php">Home</a></li>
           		
-          		<li><a href="portfolio.php">Portfolio</a>
-                    <ul>
-                        <li><a href="#submenu1">Sub menu 1</a></li>
-                        <li><a href="#submenu2">Sub menu 2</a></li>
-                        <li><a href="#submenu3">Sub menu 3</a></li>
-                        <li><a href="#submenu4">Sub menu 4</a></li>
-                        <li><a href="#submenu5">Sub menu 5</a></li>
-                  	</ul>
-              	</li>
+          		
               	<li><a href="blog.php">Blog</a></li>
               	<li><a href="contact.php" class="selected">Contact</a></li>
+                <?php
+                if (isset($_SESSION["id"]))
+                    {
+                ?>
+                <li><a href="account.php"><?php echo $_SESSION["username"]; ?></a>
+                    <ul>
+                        <li><a href="../includes/logout.inc.php">Log out</a></li>
+                        
+                  </ul>
+                </li>  
+                <?php      
+                    }
+                    else
+                    {
+                ?>
                 <li><a href="profile.php">Sign up/Log in</a>
                     <ul>
                         <li><a href="profile.php">Log in</a></li>
                         <li><a href="signup.php">Sign up</a></li>
                   </ul>
                 </li>
+                <?php
+                    }
+                ?>
             </ul>
             <br style="clear: left" />
         </div> <!-- end of templatemo_menu -->

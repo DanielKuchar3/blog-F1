@@ -1,63 +1,21 @@
 <?php
 
-if($_SERVER["REQUEST_METHOD"] === "POST") {
-
+if(isset($_POST["submit"]))
+{
+    // Vyberame data
     $username = $_POST["username"];
-    $pwd = $_POST["pwd"];
     $email = $_POST["email"];
+    $pwd = $_POST["pwd"];
 
-    try {
+    //signup class
+    include "../classes/database.php";
+    include "../classes/signup.classes.php";
+    include "../classes/signupcontrol.classes.php";
+    $signup = new SignupContr($username, $email, $pwd);
 
-        require_once 'dbh.inc.php';
-        require_once 'signup_model.inc.php';
-        require_once 'signup_contr.inc.php';
-
-        // error handlers
-        $errors = [];
-        if (is_input_empty($username, $pwd, $email)){
-            $errors["empty_input"] = "Fill in all fields!";
-        }
-        if (is_email_invalid($email)) {
-            $errors["invalid_email"] = "Invalid email used!";
-        }
-        if (is_username_taken($pdo, $username)) {
-            $errors["username_taken"] = "Username already taken!";
-        }
-        if (is_email_registered($pdo, $email)) {
-            $errors["email_used"] = "Email already registered!";
-        }
-
-        require_once 'config_session.inc.php';
-
-
-        if($errors){
-            $_SESSION["errors_signup"] = $errors;
-
-            $signupData = [
-                "username" => $username,
-                "email" => $email
-            ];
-             $_SESSION["signup_data"] = $signupData;
-
-
-            header("Location: ../blog-F1-main/signup.php");
-            die();
-        }
-
-        create_user($pdo, $pwd, $username, $email);
-
-        header("Location: ../blog-F1-main/signup.php?signup=success");
-
-        $pdo = null;
-        $stmt = null;
-
-        die();
-  
-    } catch (PDOException $e) {
-        die("Query failed: " . $e->getMessage());  
-    }
-
-} else {
-    header("Location: ../blog-F1-main/index.php");
-    die();
+    //error handlers
+    $signup->signupUser();
+    //navrat na front page
+    header("location: ../blog-F1-main/logout.php?error=none");
 }
+

@@ -2,7 +2,6 @@
 include("partials/header.php")
 
 ?>
-
 <body>
 
 <div id="templatemo_wrapper">
@@ -14,15 +13,7 @@ include("partials/header.php")
             <ul>
               	<li><a href="index.php">Home</a></li>
           		
-          		<li><a href="portfolio.php">Portfolio</a>
-                    <ul>
-                        <li><a href="#submenu1">Sub menu 1</a></li>
-                        <li><a href="#submenu2">Sub menu 2</a></li>
-                        <li><a href="#submenu3">Sub menu 3</a></li>
-                        <li><a href="#submenu4">Sub menu 4</a></li>
-                        <li><a href="#submenu5">Sub menu 5</a></li>
-                  	</ul>
-              	</li>
+          		
               	<li><a href="blog.php" class="selected">Blog</a></li>
               	<li><a href="contact.php">Contact</a></li>
                 <li><a href="profile.php">Sign up/Log in</a>

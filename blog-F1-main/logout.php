@@ -1,7 +1,6 @@
 <?php
 include("partials/header.php");
-require_once '../includes/config_session.inc.php';
-require_once '../includes/login_view.inc.php';
+session_start();
 
 ?>
 
@@ -16,15 +15,7 @@ require_once '../includes/login_view.inc.php';
             <ul>
               	<li><a href="index.php">Home</a></li>
           		
-          		<li><a href="portfolio.php">Portfolio</a>
-                    <ul>
-                        <li><a href="#submenu1">Sub menu 1</a></li>
-                        <li><a href="#submenu2">Sub menu 2</a></li>
-                        <li><a href="#submenu3">Sub menu 3</a></li>
-                        <li><a href="#submenu4">Sub menu 4</a></li>
-                        <li><a href="#submenu5">Sub menu 5</a></li>
-                  	</ul>
-              	</li>
+          		
               	<li><a href="blog.php">Blog</a></li>
               	<li><a href="contact.php" >Contact</a></li>
                 <li><a href="profile.php">Sign up/Log in</a>
@@ -40,9 +31,8 @@ require_once '../includes/login_view.inc.php';
     
     <div id="content_top">
         <div id="page_title">
-            <?php
-            output_username();
-            ?></div>
+        <h1>Signup succesfull</h1>
+    </div>
       
             
         
@@ -53,9 +43,9 @@ require_once '../includes/login_view.inc.php';
        
   		
          <div id="contact_form">
-            <form method="post"  action="../includes/logout.inc.php">     
+            <form method="post"  action="../blog-F1-main/profile.php">     
                 <div class="cleaner h20"></div>
-                    <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Logout" /> 
+                    <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Login" /> 
                     
                     
             </form>
