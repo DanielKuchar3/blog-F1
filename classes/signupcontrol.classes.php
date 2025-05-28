@@ -1,5 +1,6 @@
 <?php
 
+
 class SignupContr extends Signup {
     private $username;
     private $email;

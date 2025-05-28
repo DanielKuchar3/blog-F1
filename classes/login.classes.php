@@ -1,10 +1,11 @@
 <?php
 
+
 class Login extends Database {
 
 
     protected function getUser($username, $pwd) {
-        $stmt = $this->connect()->prepare('SELECT pwd FROM pouzivatelia WHERE username = ? OR pwd = ?;');
+        $stmt = $this->connect()->prepare('SELECT pwd FROM pouzivatelia WHERE username = ? OR email = ?;');
 
 
         if(!$stmt->execute(array($username, $pwd))) {
@@ -49,12 +50,15 @@ class Login extends Database {
             session_start();
             $_SESSION["id"] = $user[0]["id"];
             $_SESSION["username"] = $user[0]["username"];
+            $_SESSION["is_admin"] = $user[0]["is_admin"];
 
             $stmt = null;
+            return true;
         }
 
        
-        $stmt = null;
+        
+        
     }
 
        

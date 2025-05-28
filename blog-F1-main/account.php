@@ -40,29 +40,7 @@ session_start();
         <div class="cleaner"></div>
     </div>  
     
-    <div id="templatemo_content">
-        
-  		<h1>Send us a message</h1>
-         <div id="contact_form">
-            <form method="post" name="contact" action="../includes/formhandler.inc.php">
-            	<div class="float_l">
-                 	<label for="author">Name:</label> 
-                    <input required type="text"  name="username"  class="required input_field" />
-				</div>
-                <div class="float_r">
-                    <label for="email">Email:</label> 
-                    <input required type="text"  name="email" class="validate-email required input_field" />
-				</div>
-                <div class="cleaner h20"></div>
-                    <label for="text">Message:</label> 
-                    <textarea id="text" name="message" rows="0" cols="0" class="required"></textarea>
-                <div class="cleaner h20"></div>
-                    <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Send" /> 
-                    <input type="reset" class="submit_btn float_r" name="reset" id="reset" value="Reset" />
-            </form>
-        </div> 
-        
-    </div> 
+    
     <?php
     include("partials/footer.php")
 

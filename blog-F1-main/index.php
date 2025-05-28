@@ -48,13 +48,7 @@ session_start();
     </div> <!-- end of header -->
 
     
-    <div id="templatemo_slider">
-        <div id="flash_grid_slider">
-            <a rel="nofollow" href="http://www.adobe.com/go/getflashplayer">
-                <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
-            </a>
-        </div>
-    </div>
+    
     
     <div id="content_top">
         <div id="page_title"> F1 NEWS</div>
