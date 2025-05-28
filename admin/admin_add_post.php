@@ -49,6 +49,8 @@ if (!empty($title) && !empty($excerpt) && !empty($content)) {
 
 ?>
 
+
+
 <link href="../blog-F1-main/templatemo_style.css" rel="stylesheet" type="text/css" />
 
 <h1><?= $editing ? 'Upraviť článok' : 'Pridať nový článok' ?></h1>

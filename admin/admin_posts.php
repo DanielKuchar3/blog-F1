@@ -14,7 +14,44 @@ $posts = $postObj->getAllPosts();
 
 
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Newspaper Template - About</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
 <link href="../blog-F1-main/templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="../blog-F1-main/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="../blog-F1-main/js/jquery.min.js"></script>
+<script type="text/javascript" src="../blog-F1-main/js/ddsmoothmenu.js">
+
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+
+</head>
 
 <body>
 
@@ -26,16 +63,16 @@ $posts = $postObj->getAllPosts();
         </div>
         <div id="templatemo_menu" class="ddsmoothmenu">
             <ul>
-              	<li><a href="index.php">Home</a></li>
+              	<li><a href="../blog-F1-main/index.php">Home</a></li>
           		
           		
-              	<li><a href="blog.php">Blog</a></li>
-              	<li><a href="contact.php" class="selected">Contact</a></li>
+              	<li><a href="../blog-F1-main/blog.php">Blog</a></li>
+              	<li><a href="../blog-F1-main/contact.php" >Contact</a></li>
                 <?php
                 if (isset($_SESSION["id"]))
                     {
                 ?>
-                <li><a href="account.php"><?php echo $_SESSION["username"]; ?></a>
+                <li><a href="admin/admin_post.php" class="selected"><?php echo $_SESSION["username"]; ?></a>
                     <ul>
                         <li><a href="../includes/logout.inc.php">Log out</a></li>
                         
@@ -46,10 +83,10 @@ $posts = $postObj->getAllPosts();
                     else
                     {
                 ?>
-                <li><a href="profile.php">Sign up/Log in</a>
+                <li><a href="../blog-F1-main/profile.php">Sign up/Log in</a>
                     <ul>
-                        <li><a href="profile.php">Log in</a></li>
-                        <li><a href="signup.php">Sign up</a></li>
+                        <li><a href="../blog-F1-main/profile.php">Log in</a></li>
+                        <li><a href="../blog-F1-main/signup.php">Sign up</a></li>
                   </ul>
                 </li>
                 <?php
