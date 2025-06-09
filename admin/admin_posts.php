@@ -72,7 +72,7 @@ ddsmoothmenu.init({
                 if (isset($_SESSION["id"]))
                     {
                 ?>
-                <li><a href="admin/admin_post.php" class="selected"><?php echo $_SESSION["username"]; ?></a>
+                <li><a href="../admin/admin_post.php" class="selected"><?php echo $_SESSION["username"]; ?></a>
                     <ul>
                         <li><a href="../includes/logout.inc.php">Log out</a></li>
                         
@@ -97,7 +97,7 @@ ddsmoothmenu.init({
         </div> <!-- end of templatemo_menu -->
     </div> <!-- end of header -->
     
-    <h1>Správa článkov (Admin)</h1>
+    <h1>Správa článkov</h1>
 <p><a href="admin_add_post.php">Pridať nový článok</a></p>
 
 <table border="1" cellpadding="10">

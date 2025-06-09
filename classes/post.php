@@ -23,9 +23,9 @@ class Post extends Database {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-     public function addPost($title, $content, $excerpt ,$image) {
-        $stmt = $this->conn->prepare("INSERT INTO posts (title, content, excerpt , image, datum_vytvorenia) VALUES (?, ?, ?, ?, NOW())");
-        return $stmt->execute([$title, $content, $excerpt ,$image]);
+     public function addPost($title,$excerpt,$content,$image) {
+        $stmt = $this->conn->prepare("INSERT INTO posts (title, excerpt, content, image, datum_vytvorenia) VALUES (?, ?, ?, ?, NOW())");
+        return $stmt->execute([$title, $excerpt, $content, $image]);
     }
 
     public function updatePost($id, $title, $excerpt, $content, $image = null) {

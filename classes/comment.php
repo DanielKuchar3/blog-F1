@@ -44,4 +44,15 @@ class Comment extends Database
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
+    public function getCommentsByUserId($userId)
+{
+    $stmt = $this->conn->prepare("SELECT comments.*, posts.title AS post_title 
+                                  FROM comments 
+                                  JOIN posts ON comments.post_id = posts.id 
+                                  WHERE comments.user_id = ? 
+                                  ORDER BY datum_vytvorenia DESC");
+    $stmt->execute([$userId]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 }

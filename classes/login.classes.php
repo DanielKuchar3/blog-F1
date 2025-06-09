@@ -5,10 +5,10 @@ class Login extends Database {
 
 
     protected function getUser($username, $pwd) {
-        $stmt = $this->connect()->prepare('SELECT pwd FROM pouzivatelia WHERE username = ? OR email = ?;');
+        $stmt = $this->connect()->prepare('SELECT * FROM pouzivatelia WHERE username = ? OR email = ?;');
 
 
-        if(!$stmt->execute(array($username, $pwd))) {
+        if(!$stmt->execute(array($username, $username))) {
             $stmt = null;
             header("location: ../blog-F1-main/index.php?error=stmtfailed");
             exit();
@@ -31,9 +31,9 @@ class Login extends Database {
             exit();
         }
         elseif($checkPwd == true) {
-            $stmt = $this->connect()->prepare('SELECT * FROM pouzivatelia WHERE username = ? OR email = ? AND pwd = ?;');
+            $stmt = $this->connect()->prepare('SELECT * FROM pouzivatelia WHERE username = ? OR email = ?;');
 
-            if(!$stmt->execute(array($username, $email, $pwd))) {
+            if(!$stmt->execute(array($username, $pwd))) {
                 $stmt = null;
                 header("location: ../blog-F1-main/index.php?error=stmtfailed");
                 exit();

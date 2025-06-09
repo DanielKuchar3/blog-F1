@@ -4,7 +4,6 @@ session_start();
 ?>
 
 <body>
-
 <div id="templatemo_wrapper">
 	<div id="templatemo_header">
     	<div id="site_title">
@@ -12,35 +11,41 @@ session_start();
         </div>
         <div id="templatemo_menu" class="ddsmoothmenu">
             <ul>
-              	<li><a href="index.php">Home</a></li>
+              	<li><a href="index.php" >Home</a></li>
           		
           		
               	<li><a href="blog.php">Blog</a></li>
-              	<li><a href="contact.php" class="selected">Contact</a></li>
-                <?php
-                if (isset($_SESSION["id"]))
-                    {
-                ?>
-                <li><a href="account.php"><?php echo $_SESSION["username"]; ?></a>
-                    <ul>
-                        <li><a href="../includes/logout.inc.php">Log out</a></li>
-                        
-                  </ul>
-                </li>  
-                <?php      
-                    }
-                    else
-                    {
-                ?>
-                <li><a href="profile.php">Sign up/Log in</a>
-                    <ul>
-                        <li><a href="profile.php">Log in</a></li>
-                        <li><a href="signup.php">Sign up</a></li>
-                  </ul>
-                </li>
-                <?php
-                    }
-                ?>
+              	<li><a href="contact.php" class="selected" >Contact</a></li>
+
+               <?php
+if (isset($_SESSION["id"])) {
+    if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1) {
+        // ADMIN
+        echo '<li><a href="../admin/admin_posts.php">' . htmlspecialchars($_SESSION["username"]) . '</a>
+                <ul>
+                    <li><a href="../includes/logout.inc.php">Log out</a></li>
+                </ul>
+              </li>';
+    } else {
+        // BEŽNÝ POUŽÍVATEĽ
+        echo '<li><a href="account.php">' . htmlspecialchars($_SESSION["username"]) . '</a>
+                <ul>
+                    <li><a href="../includes/logout.inc.php">Log out</a></li>
+                </ul>
+              </li>';
+    }
+} else {
+?>
+    <li><a href="profile.php">Sign up/Log in</a>
+        <ul>
+            <li><a href="profile.php">Log in</a></li>
+            <li><a href="signup.php">Sign up</a></li>
+        </ul>
+    </li>
+<?php
+}
+?>
+               
             </ul>
             <br style="clear: left" />
         </div> <!-- end of templatemo_menu -->
