@@ -24,7 +24,7 @@ if (!$comment) {
     die("Komentár neexistuje.");
 }
 
-// Overenie, že prihlásený užívateľ je autor komentára
+
 if ($comment['user_id'] != $_SESSION['id']) {
     die("Nemáte oprávnenie upravovať tento komentár.");
 }

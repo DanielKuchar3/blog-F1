@@ -66,7 +66,7 @@ if (isset($_SESSION["id"])) {
     </div>
 
     <div id="templatemo_content">
-        <!-- LEFT COLUMN -->
+        
         <div class="col_w600 float_l">
             <?php foreach ($posts as $post): ?>
                 <div class="post_box">

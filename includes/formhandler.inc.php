@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
             echo "Nepodarilo sa odoslať správu.";
         }
     } else {
-        echo $validation; // vypíše validačnú chybu
+        echo $validation; 
     }
 } else {
     echo "Formulár nebol odoslaný.";

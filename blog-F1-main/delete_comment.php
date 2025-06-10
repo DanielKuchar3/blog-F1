@@ -24,7 +24,7 @@ if (!$comment) {
     die("Komentár neexistuje.");
 }
 
-// Kontrola oprávnení: admin môže všetko, bežný používateľ len svoje komentáre
+
 if ($_SESSION['is_admin'] != 1 && $comment['user_id'] != $_SESSION['id']) {
     die("Nemáte oprávnenie vymazať tento komentár.");
 }

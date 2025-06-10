@@ -4,11 +4,11 @@
 
 if(isset($_POST["submit"]))
 {
-    // Vyberame data
+    
     $username = $_POST["username"];
     $pwd = $_POST["pwd"];
 
-    //signup class
+    
     include "../classes/database.php";
     include "../classes/login.classes.php";
     include "../classes/logincontrol.classes.php";

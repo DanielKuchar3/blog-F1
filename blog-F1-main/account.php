@@ -14,7 +14,7 @@ require_once '../classes/comment.php';
 $db = (new Database())->getConnection();
 $commentObj = new Comment($db);
 
-// Získaj komentáre prihláseného používateľa
+// Získa komentáre prihláseného používateľa
 $userComments = $commentObj->getCommentsByUserId($_SESSION["id"]);
 ?>
 
