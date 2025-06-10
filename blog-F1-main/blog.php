@@ -71,7 +71,7 @@ if (isset($_SESSION["id"])) {
             <?php foreach ($posts as $post): ?>
                 <div class="post_box">
                     <h2><?= htmlspecialchars($post['title']) ?></h2>
-                    <img src="images/gallery/<?= htmlspecialchars($post['image']) ?>" alt="Image" style="max-width:200px;">
+                    <img src="../uploads/<?= htmlspecialchars($post['image']) ?>" alt="Image" style="max-width:200px;">
                     <p><?= htmlspecialchars($post['excerpt']) ?></p>
                     <p><a href="blog_post.php?id=<?= $post['id'] ?>" class="more float_r">Continue</a></p>
                 </div>

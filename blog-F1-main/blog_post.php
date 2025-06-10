@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- LEFT COLUMN -->
         <div class="col_w600 float_l">
             <div class="post_box">
-                <img src="images/gallery/<?= htmlspecialchars($post['image']) ?>" alt="Image" style="max-width:400px;">
+                <img src="../uploads/<?= htmlspecialchars($post['image']) ?>" alt="Image" style="max-width:400px;">
                 <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
             </div>
 
